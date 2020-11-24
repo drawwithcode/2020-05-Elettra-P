@@ -4,7 +4,8 @@ let express = require('express')
 
 let app = express();
 
-let port = 3000;
+// let port = 3000;
+let port = process.env.PORT || 3000;
 
 let server = app.listen(port);
 
@@ -23,7 +24,7 @@ function newConnection(socket){
 	socket.on('mouse', mouseMessage);
 
 	function mouseMessage(dataReceived){
-		
+
 		console.log(dataReceived);
 
 		socket.broadcast.emit('mouseBroadcast', dataReceived);
