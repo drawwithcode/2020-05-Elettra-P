@@ -35,6 +35,10 @@ function setup() {
   background(126, 168, 190)
 
 
+  //image
+  const duck_width = width / 4;
+  imageMode(CENTER);
+  image(duck, width / 2, height / 2, duck_width, duck.height * duck_width / duck.width);
 }
 
 
@@ -43,10 +47,7 @@ function setup() {
 
 
 function draw() {
-  //resizable image
-  const duck_width = width / 4;
-  imageMode(CENTER);
-  image(duck, width / 2, height / 2, duck_width, duck.height * duck_width / duck.width);
+
 
 //drawing with selected color + message broadcast
   if (mouseIsPressed) {
